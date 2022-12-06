@@ -1,20 +1,22 @@
 import {useState, useEffect} from 'react';
 import Player from './components/Player/Player';
-
+import ParticlesBackground from "./components/ParticlesBackground"
 function App() {
   const [songs] = useState([
+     {
+      title: "Somebody New",
+      artist: "Witt Lowry",
+      img_src: "./images/song-3.jpg",
+      src: "./music/somebody-new.mp3"
+    },
+    
     {
       title: "Forget me too ft. Halsey",
       artist: "Machine Gun Kelly",
       img_src: "./images/song-1.jpg",
       src: "./music/on-n-on.mp3"
     },
-    {
-      title: "Somebody New",
-      artist: "Witt Lowry",
-      img_src: "./images/song-3.jpg",
-      src: "./music/somebody-new.mp3"
-    },
+   
     {
       title: "Cartoon",
       artist: "On N On",
@@ -27,9 +29,7 @@ function App() {
       img_src: "./images/generic.jpeg",
       src: "./music/Mulholland.mp3"
     },
-  ]);
-  const [christmasSongs] = useState([
-    {
+     {
       title: "Auld Land Syne",
       artist: "DJ Williams",
       img_src: "./images/christmas.jpeg",
@@ -48,7 +48,6 @@ function App() {
       src: "./music/God Rest Ye Merry Gentlemen.mp3"
     },
   ]);
-
   const [currentSongIndex, setCurrentSongIndex] = useState(0);
   const [nextSongIndex, setNextSongIndex] = useState(0);
 
@@ -64,29 +63,13 @@ function App() {
 
   return (
     <div className="App">
+   
       <Player 
         currentSongIndex={currentSongIndex} 
         setCurrentSongIndex={setCurrentSongIndex} 
         nextSongIndex={nextSongIndex} 
         songs={songs}
       />
-    </div>
-  );
-}
-
-function Navigation() {
-  return (
-    <div className="navigation">
-      <nav className="navbar navbar-expand navbar-dark bg-dark">
-        <div className="container">
-          <div>
-            <ul className="navbar-nav ml-auto">
-              <li className="nav-item">
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
     </div>
   );
 }

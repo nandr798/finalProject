@@ -6,7 +6,38 @@
 }
 
 body {
-    background-color: #DDD;
+    background-color: #e5e5f7;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.bg {
+  animation:slide 3s ease-in-out infinite alternate;
+  background-image: linear-gradient(-60deg, #6c3 50%, #09f 50%);
+  bottom:0;
+  left:-50%;
+  opacity:.5;
+  position:fixed;
+  right:-50%;
+  top:0;
+  z-index:-1;
+}
+.bg2 {
+  animation-direction:alternate-reverse;
+  animation-duration:4s;
+}
+
+.bg3 {
+  animation-duration:5s;
+}
+
+@keyframes slide {
+  0% {
+    transform:translateX(-25%);
+  }
+  100% {
+    transform:translateX(25%);
+  }
 }
 
 .App {
@@ -17,6 +48,8 @@ body {
 }
 
 .c-player {
+    z-index: 999;
+    position: absolute;
     display: block;
     background-color: #313131;
     display: block;
@@ -26,7 +59,7 @@ body {
     -shadow: inset -6px -6px 12px rgba(0, 0, 0, 0.8), inset 6px 6px 12px rgba(255, 255, 255, 0.4);
 }
 
-.c-player > h4 {
+.c-player>h4 {
     color: #FFF;
     font-size: 14px;
     text-transform: uppercase;
@@ -34,14 +67,14 @@ body {
     text-align: center;
 }
 
-.c-player > p {
+.c-player>p {
     color: #AAA;
     font-size: 14px;
     text-align: center;
     font-weight: 600;
 }
 
-.c-player > p span {
+.c-player>p span {
     font-weight: 400;
 }
 
@@ -94,8 +127,8 @@ body {
     border-radius: 50%;
     border: none;
     outline: none;
-    background-color: #FFCE00;
-    color: #FFF;
+    background-color: light green;
+    color: green;
     font-size: 24px;
     cursor: pointer;
 }
@@ -110,26 +143,31 @@ body {
 }
 
 ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: #333;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
 }
 
 li {
-  float: left;
+    float: left;
 }
 
 li a {
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
 }
 
 /* Change the link color to #111 (black) on hover */
 li a:hover {
-  background-color: #111;
+    background-color: #111;
+}
+
+canvas {
+    display: block;
+    vertical-align: bottom;
 }
